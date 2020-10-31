@@ -1,0 +1,988 @@
+# extended LDIF
+#
+# LDAPv3
+# base <o=DEFAULT,DC=C-NTDB> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# DEFAULT, C-NTDB
+dn: o=DEFAULT,DC=C-NTDB
+o: DEFAULT
+objectClass: tenantConfiguration
+
+# ACCESS, DEFAULT, C-NTDB
+dn: ds=ACCESS,o=DEFAULT,DC=C-NTDB
+ds: ACCESS
+objectClass: cntdbDsElement
+
+# DEVICE, DEFAULT, C-NTDB
+dn: ds=DEVICE,o=DEFAULT,DC=C-NTDB
+ds: DEVICE
+objectClass: cntdbDsElement
+
+# GROUPS, DEFAULT, C-NTDB
+dn: ds=GROUPS,o=DEFAULT,DC=C-NTDB
+ds: GROUPS
+objectClass: cntdbDsElement
+
+# IMSISWAP, GROUPS, DEFAULT, C-NTDB
+dn: ds=IMSISWAP,ds=GROUPS,o=DEFAULT,DC=C-NTDB
+ds: IMSISWAP
+objectClass: cntdbDsElement
+
+# compIMSISwap, IMSISWAP, GROUPS, DEFAULT, C-NTDB
+dn: ds=compIMSISwap,ds=IMSISWAP,ds=GROUPS,o=DEFAULT,DC=C-NTDB
+ds: compIMSISwap
+objectClass: cntdbDsElement
+
+# schedIMSISwap, IMSISWAP, GROUPS, DEFAULT, C-NTDB
+dn: ds=schedIMSISwap,ds=IMSISWAP,ds=GROUPS,o=DEFAULT,DC=C-NTDB
+ds: schedIMSISwap
+objectClass: cntdbDsElement
+
+# hlr, GROUPS, DEFAULT, C-NTDB
+dn: ds=hlr,ds=GROUPS,o=DEFAULT,DC=C-NTDB
+ds: hlr
+objectClass: cntdbDsElement
+
+# pcs, GROUPS, DEFAULT, C-NTDB
+dn: ds=pcs,ds=GROUPS,o=DEFAULT,DC=C-NTDB
+ds: pcs
+objectClass: cntdbDsElement
+
+# pcrf, GROUPS, DEFAULT, C-NTDB
+dn: ds=pcrf,ds=GROUPS,o=DEFAULT,DC=C-NTDB
+ds: pcrf
+objectClass: cntdbDsElement
+
+# SUBSCRIBER, DEFAULT, C-NTDB
+dn: ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+ds: SUBSCRIBER
+objectClass: cntdbDsElement
+
+# 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+uid: 266012000200000
+objectClass: subscriber
+
+# services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: subdata=services,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: services
+objectClass: subscriberSubdata
+
+# hlr, services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: ds=hlr,subdata=services,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-N
+ TDB
+ds: hlr
+objectClass: cntdbDsElement
+
+# 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: imsi=266012000200000,ds=hlr,subdata=services,uid=266012000200000,ds=SUBSCR
+ IBER,o=DEFAULT,DC=C-NTDB
+imsi: 266012000200000
+objectClass: ACSUBDATA
+acSubscrType: 1
+acEncKey: 11111111111111111111111111111111
+acSeqNum: 000000000000
+acAMF: 0000
+acKdbId: 1
+acAlgorithmId: 1
+acIccId: 266012000200000
+
+# hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEFAULT, C-
+ NTDB
+dn: o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=266012000200000,ds=
+ SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+o: hlr
+objectClass: SUBINNSS
+basicService: TS21
+basicService: TS22
+basicService: GPRS
+multinumber: FALSE
+wllSubscr: FALSE
+msubType: 0
+tifSubscr: FALSE
+category: 10
+subscrRestr: 0
+odbBaoc: 0
+odbBaic: 0
+odbBaroam: 0
+odbBaprem: 0
+odbBassm: 0
+odbHplmn: 0
+odbPOAccess: 0
+odbSCI: 0
+netwAccMode: 3
+odbRoamGprs: 0
+optRouting: 2
+umtsSubScr: 7
+isActiveIMSI: FALSE
+ndcLac: 177
+msubStatus: 0
+actIMSIGprs: FALSE
+clipOverr: FALSE
+colpOverr: FALSE
+tifCsiActive: FALSE
+tifCsiNtfCse: FALSE
+gsmCcbsAct: 1
+ccbsBlckStat: 1
+ccbsSubStat: 3
+ccbsTQscnt: FALSE
+pwBlockedBN: FALSE
+validVLRLoc: FALSE
+mtcPossible: TRUE
+intVLRNumber: FALSE
+hplmnVLRNum: FALSE
+odbNotSupVLR: FALSE
+cugNotSupVLR: FALSE
+smsMtNotSup: FALSE
+msubPurged: FALSE
+mscArRestRcv: 2
+regSubNotSup: FALSE
+aoccNotSup: FALSE
+mapVersion: 3
+camelPhase: 1
+vlrNotAllow: FALSE
+ltFeatNotSup: FALSE
+gbs20NotSup: FALSE
+gbs30NotSup: FALSE
+gbs40NotSup: FALSE
+roamStatus: 0
+doubleMSUBSt: 0
+imsiTraceStat: 0
+imsiChgovrStat: 0
+ccbsAnotSVLR: FALSE
+ccbsBnotSVLR: FALSE
+defCFapplied: FALSE
+vbcVgcNotSup: FALSE
+prohFtnoUpdInVlrFail: FALSE
+ts10BarrByCb: 0
+ts20BarrByCb: 0
+ts60BarrByCb: 0
+bs20BarrByCb: 0
+bs30BarrByCb: 0
+bs40BarrByCb: 0
+vlrSupportsLongFtno: FALSE
+sgsnValidLoc: FALSE
+intSGSNNum: FALSE
+hplmnSGSNNum: FALSE
+sgsnNotAllow: FALSE
+sgsnSmsMtNot: FALSE
+prepaidBarr: FALSE
+gprsMapVers: 3
+gprsCamelPh: 1
+sgsnCamelNot: FALSE
+sgsnExtQos: FALSE
+sgsnRoamStat: 0
+odbNotSupSGSN: FALSE
+refroamAreaName: XTRAROAM
+msubPurgedGprs: FALSE
+hlrSubStat: TRUE
+vbsNotSupp: FALSE
+vgcsNotSupp: FALSE
+ageIndicatorForVLR: 000000
+ageIndicatorForSGSN: 000000
+oickSubst: 0
+supportedOick: FALSE
+suppExtCamelVlr: FALSE
+suppExtCamelSgsn: FALSE
+sgsnArRestRcv: 2
+regSubNotSupSGSN: FALSE
+autoCallRedirNotSup: FALSE
+ssetSubst: 0
+emoIckSubst: 0
+ssetNotSupp: FALSE
+emoIckNotSupp: FALSE
+sgsnIdentity: 1234567.sgsn-serv.example.com
+
+# 591792000200000, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCR
+ IBER, DEFAULT, C-NTDB
+dn: msisdn=591792000200000,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,
+ uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+msisdn: 591792000200000
+objectClass: MSISDNINNSS
+isMSISDNIntercepted: FALSE
+isBasic: TRUE
+
+# 2, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEFAULT,
+  C-NTDB
+dn: pdpContextId=2,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=2660
+ 12000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdpContextId: 2
+objectClass: GPRSDATA
+refqOfServName: adminHlr
+vplmnAllowed: TRUE
+pdpType: 1
+accPointName: xxxadmin
+chargCharac: 8
+chargCharacBehaviour: 0
+
+# 3, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEFAULT,
+  C-NTDB
+dn: pdpContextId=3,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=2660
+ 12000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdpContextId: 3
+objectClass: GPRSDATA
+refqOfServName: intrnHlr
+vplmnAllowed: TRUE
+pdpType: 1
+accPointName: xxxinternet
+chargCharac: 8
+chargCharacBehaviour: 0
+
+# 4, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEFAULT,
+  C-NTDB
+dn: pdpContextId=4,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=2660
+ 12000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdpContextId: 4
+objectClass: GPRSDATA
+refqOfServName: appHlr
+vplmnAllowed: TRUE
+pdpType: 1
+accPointName: xxxapp
+chargCharac: 8
+chargCharacBehaviour: 0
+
+# 5, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEFAULT,
+  C-NTDB
+dn: pdpContextId=5,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=2660
+ 12000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdpContextId: 5
+objectClass: GPRSDATA
+refqOfServName: adminHlr
+vplmnAllowed: TRUE
+pdpType: 1
+accPointName: enterprise
+chargCharac: 8
+chargCharacBehaviour: 0
+
+# non3GPP, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DE
+ FAULT, C-NTDB
+dn: subdata=non3GPP,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=266
+ 012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: non3GPP
+objectClass: NON3GPPDATA
+accessAPN: 0
+mip6Vector: 0000010000000000
+
+# eps, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEFAUL
+ T, C-NTDB
+dn: subdata=eps,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=2660120
+ 00200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: eps
+objectClass: EPSDATA
+msubPurgedEps: TRUE
+sessionTransNum: 266012000200000
+mmeIdentity: 1234567.mme-serv.example.com
+msisdn: 591792000200000
+
+# non3GPPEps, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER,
+  DEFAULT, C-NTDB
+dn: subdata=non3GPPEps,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=
+ 266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: non3GPPEps
+objectClass: NON3GPPEPSDATA
+defContextId: 2
+userMaxReqBwUL: 100000000
+userMaxReqBwDL: 100000000
+
+# xxxims, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEF
+ AULT, C-NTDB
+dn: pdnAccPointName=xxxims,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,
+ uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdnAccPointName: xxxims
+objectClass: PDNCONTEXT
+refLteQOfServName: imsQosEps
+vplmnAddressAllowed: NOTALLOWED
+pdnGwAllocType: DYNAMIC
+pdnChargCharac: 8
+pdnChargCharacBehaviour: 0
+pdnContextId: 1
+pdnType: IPv6
+pdnMaxReqBwUL: 128000
+pdnMaxReqBwDL: 128000
+
+# xxxadmin, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, D
+ EFAULT, C-NTDB
+dn: pdnAccPointName=xxxadmin,o=hlr,imsi=266012000200000,ds=hlr,subdata=service
+ s,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdnAccPointName: xxxadmin
+objectClass: PDNCONTEXT
+refLteQOfServName: adminQosEps
+vplmnAddressAllowed: NOTALLOWED
+pdnGwAllocType: DYNAMIC
+pdnChargCharac: 8
+pdnChargCharacBehaviour: 0
+pdnContextId: 2
+pdnType: IPv4v6
+pdnMaxReqBwUL: 75000000
+pdnMaxReqBwDL: 75000000
+
+# xxxinternet, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER
+ , DEFAULT, C-NTDB
+dn: pdnAccPointName=xxxinternet,o=hlr,imsi=266012000200000,ds=hlr,subdata=serv
+ ices,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdnAccPointName: xxxinternet
+objectClass: PDNCONTEXT
+refLteQOfServName: internetQosEps
+vplmnAddressAllowed: NOTALLOWED
+pdnGwAllocType: DYNAMIC
+pdnChargCharac: 8
+pdnChargCharacBehaviour: 0
+pdnContextId: 3
+pdnType: IPv4v6
+pdnMaxReqBwUL: 75000000
+pdnMaxReqBwDL: 75000000
+
+# cf, hlr, 266012000200000, hlr, services, 266012000200000, SUBSCRIBER, DEFAULT
+ , C-NTDB
+dn: pdnAccPointName=cf,o=hlr,imsi=266012000200000,ds=hlr,subdata=services,uid=
+ 266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdnAccPointName: cf
+objectClass: PDNCONTEXT
+refLteQOfServName: appQosEps
+vplmnAddressAllowed: NOTALLOWED
+pdnGwAllocType: DYNAMIC
+pdnChargCharac: 8
+pdnChargCharacBehaviour: 0
+pdnContextId: 7
+pdnType: IPv4v6
+pdnMaxReqBwUL: 75000000
+pdnMaxReqBwDL: 75000000
+
+# hss, services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: ds=hss,subdata=services,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-N
+ TDB
+ds: hss
+objectClass: cntdbDsElement
+
+# 1, hss, services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: subscriptionId=1,ds=hss,subdata=services,uid=266012000200000,ds=SUBSCRIBER
+ ,o=DEFAULT,DC=C-NTDB
+subscriptionId: 1
+objectClass: hssSubscription
+adminBlocked: FALSE
+defScscfReq: TRUE
+scscfHost: 12345678901234567890123.ccf1.example.com
+ccfPrim: ccfprimary.example.com
+ccfSec: ccfsecond.example.com
+profileType: N
+scscfDestRealm: example.com
+scscfSipAddress: sip:12345678901234567890123.ccf1.example.com
+maxNumOfPublicIds: 185
+chargingGroupId: asdfjklopq
+
+# 266012000200000@example.com, 1, hss, services, 266012000200000, SUBSCRIBER, D
+ EFAULT, C-NTDB
+dn: privateId=266012000200000@example.com,subscriptionId=1,ds=hss,subdata=serv
+ ices,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+privateId: 266012000200000@example.com
+objectClass: hssImpi
+actAsVLR: FALSE
+preferredDomain: N
+preferredAuthScheme: T
+usedAuthScheme: T
+framedInterfaceId: 2001:0000:0000:0000:0000:0000:0000:0000:0000:0000:0000:0000
+ :0000
+framedIPV6Prefix: 2001:0000:0000:0000:0000:0000:0000:0000:0000:0000:0000:0000:
+ 0000
+imsi: 266012000200000
+msisdn: 591792000200000
+httpDigestKeyVersion: 0
+provisionedIMSI: 266012000200000
+looseRoutingInd: 0
+
+# IRS01, 1, hss, services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: irsId=IRS01,subscriptionId=1,ds=hss,subdata=services,uid=266012000200000,d
+ s=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+irsId: IRS01
+objectClass: hssIrs
+authenticationPending: FALSE
+registrationStatus: N
+privateIds: 266012000200000@example.com
+
+# 266012000200000@example.com, IRS01, 1, hss, services, 266012000200000, SUBSCR
+ IBER, DEFAULT, C-NTDB
+dn: privateId=266012000200000@example.com,irsId=IRS01,subscriptionId=1,ds=hss,
+ subdata=services,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+privateId: 266012000200000@example.com
+objectClass: hssRestorationData
+restorationData: Path: <sip:pcscf.core1.example.com:5070;lr;lskpmc=P01>\r\nCon
+ tact:+591792000200000<sip:+591792000200000@abcdefghi.example.com:5060>;expire
+ s=10800\r\nCall-ID: 1129888918192-411600000@core1.example.com\r\nFrom: +59179
+ 2000200000<sip:+591792000200000@abcdefghi.example.com>;tag=zpsfomm00000\r\nTo
+ : +591792000200000<sip:+591792000200000@abcdefghi.example.com>;tag=1062869746
+ \r\nRecord-Route: <sip:10.10.10.10:5070;routing_id=pcscf_a_side;lskpmc=P01;lr
+ >
+sipAuthScheme: IMS AKA
+
+# sip:\2B591792000200000@abcdefghi.example.com, IRS01, 1, hss, services, 266012
+ 000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: publicId=sip:\+591792000200000@abcdefghi.example.com,irsId=IRS01,subscript
+ ionId=1,ds=hss,subdata=services,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,D
+ C=C-NTDB
+publicId: sip:+591792000200000@abcdefghi.example.com
+objectClass: hssImpu
+indBarred: FALSE
+indDefault: TRUE
+origPublicId: sip:+591792000200000@abcdefghi.example.com
+serviceProfileName: SMS
+displayNamePrivacy: FALSE
+
+# CamiantUserData, sip:\2B591792000200000@abcdefghi.example.com, IRS01, 1, hss,
+  services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: serviceIndId=CamiantUserData,publicId=sip:\+591792000200000@abcdefghi.exam
+ ple.com,irsId=IRS01,subscriptionId=1,ds=hss,subdata=services,uid=266012000200
+ 000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+serviceIndId: CamiantUserData
+objectClass: hssRepositoryData
+repDataVers: 0
+data: H4sIAAAAAAAAAIWRUWuDMBSF3/srQt5nktpNJxrWyR4EWwpuY9CnNIYaMImYWN1+/RRXuo2V
+ 3ad7uOc7F+5dgCu1j1OmJNOuqF6saMGgam2jwcqkcq6JEOr73ut9z7RHtMSYoLdNXvBKKHYjtXVMc
+ wFGd6TNlilhG8bFPM4NZ04ancAfC7zBlpDGr6K145ASD8foLOLJkJXg+b0RCXwidysICm4msesOte
+ SQkvvlbRiGQRCM3Gz/hW3X2YVq5Yk5AalPyCrEXyDGD6cPqazHjboSkm2K/1MubNpZZxRYO9fKQ+f
+ EdIoEPsq6lvq4q5lOTTnyOfZjNHvp2Hw/C1389ZxPTfHWc7YBAAA=
+publicId: sip:\+591792000200000@abcdefghi.example.com
+
+# sip-application-server-abcdefg.example.com, sip:\2B591792000200000@abcdefghi.
+ example.com, IRS01, 1, hss, services, 266012000200000, SUBSCRIBER, DEFAULT, C-
+ NTDB
+dn: asHostName=sip-application-server-abcdefg.example.com,publicId=sip:\+59179
+ 2000200000@abcdefghi.example.com,irsId=IRS01,subscriptionId=1,ds=hss,subdata=
+ services,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+asHostName: sip-application-server-abcdefg.example.com
+objectClass: hssNotification
+notifyRegistration: FALSE
+notifyScscfName: FALSE
+notifyFilter: FALSE
+notifyPublicId: FALSE
+notifyChargingInfo: FALSE
+sessionId: sip-application-server-abcdefg.example.com;1439780408;239370
+serviceIndNames: CamiantUserData
+asDestRealm: example.com
+publicId: sip:+591792000200000@abcdefghi.example.com
+
+# tel:\2B591792000200000, IRS01, 1, hss, services, 266012000200000, SUBSCRIBER,
+  DEFAULT, C-NTDB
+dn: publicId=tel:\+591792000200000,irsId=IRS01,subscriptionId=1,ds=hss,subdata
+ =services,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+publicId: tel:+591792000200000
+objectClass: hssImpu
+indBarred: FALSE
+indDefault: FALSE
+origPublicId: tel:+591792000200000
+serviceProfileName: SMS
+displayNamePrivacy: FALSE
+
+# roamingIMSI, tel:\2B591792000200000, IRS01, 1, hss, services, 266012000200000
+ , SUBSCRIBER, DEFAULT, C-NTDB
+dn: serviceIndId=roamingIMSI,publicId=tel:\+591792000200000,irsId=IRS01,subscr
+ iptionId=1,ds=hss,subdata=services,uid=266012000200000,ds=SUBSCRIBER,o=DEFAUL
+ T,DC=C-NTDB
+serviceIndId: roamingIMSI
+objectClass: hssRepositoryData
+repDataVers: 0
+data: H4sIAAAAAAAAAFNQwAKibTx9gz3tiskDKaQDMm0iEtjog73Dhc2rAKcBXxwAAQAA
+publicId: tel:+591792000200000
+
+# sip-application-server-abcdefg.example.com, tel:\2B591792000200000, IRS01, 1,
+  hss, services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: asHostName=sip-application-server-abcdefg.example.com,publicId=tel:\+59179
+ 2000200000,irsId=IRS01,subscriptionId=1,ds=hss,subdata=services,uid=266012000
+ 200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+asHostName: sip-application-server-abcdefg.example.com
+objectClass: hssNotification
+notifyRegistration: FALSE
+notifyScscfName: FALSE
+notifyFilter: FALSE
+notifyPublicId: FALSE
+notifyChargingInfo: FALSE
+sessionId: sip-application-server-abcdefg.example.com;1439780408;239370
+serviceIndNames: roamingIMSI
+asDestRealm: example.com
+publicId: tel:\+591792000200000
+
+# SMS, 1, hss, services, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: profileName=SMS,subscriptionId=1,ds=hss,subdata=services,uid=2660120002000
+ 00,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+profileName: SMS
+objectClass: hssServiceProfile
+globalFilterIds: VAS_REG
+globalFilterIds: VAS_REG1
+globalFilterIds: VAS_REG2
+globalFilterIds: VAS_REG3
+globalFilterIds: VAS_REG4
+globalFilterIds: VAS_REG5
+globalFilterIds: VAS_REG6
+globalFilterIds: VAS_REG7
+globalFilterIds: VAS_REG8
+globalFilterIds: VAS_REG9
+globalFilterIds: VAS_REG10
+globalFilterIds: VAS_REG11
+globalFilterIds: VAS_REG12
+globalFilterIds: VAS_REG13
+scscfOptCap: 1
+subMediaProfId: 1
+
+# relation, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: subdata=relation,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: relation
+objectClass: subscriberSubdata
+
+# hlr, relation, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: ds=hlr,subdata=relation,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-N
+ TDB
+ds: hlr
+objectClass: cntdbDsElement
+
+# hss, relation, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: ds=hss,subdata=relation,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-N
+ TDB
+ds: hss
+objectClass: cntdbDsElement
+
+# 266012000200000@example.com, hss, relation, 266012000200000, SUBSCRIBER, DEFA
+ ULT, C-NTDB
+dn: privateId=266012000200000@example.com,ds=hss,subdata=relation,uid=26601200
+ 0200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+privateId: 266012000200000@example.com
+objectClass: impiAlias
+aliasedObjectName: subscriptionId=1,ds=hss,subdata=services,uid=26601200020000
+ 0,ds=SUBSCRIBER,o=DEFAULT,dc=C-NTDB
+
+# 266012000200000, hss, relation, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: imsi=266012000200000,ds=hss,subdata=relation,uid=266012000200000,ds=SUBSCR
+ IBER,o=DEFAULT,DC=C-NTDB
+imsi: 266012000200000
+objectClass: imsiAlias
+aliasedObjectName: subscriptionId=1,ds=hss,subdata=services,uid=26601200020000
+ 0,ds=SUBSCRIBER,o=DEFAULT,dc=C-NTDB
+
+# 591792000200000, hss, relation, 266012000200000, SUBSCRIBER, DEFAULT, C-NTDB
+dn: msisdn=591792000200000,ds=hss,subdata=relation,uid=266012000200000,ds=SUBS
+ CRIBER,o=DEFAULT,DC=C-NTDB
+msisdn: 591792000200000
+objectClass: msisdnAlias
+aliasedObjectName: subscriptionId=1,ds=hss,subdata=services,uid=26601200020000
+ 0,ds=SUBSCRIBER,o=DEFAULT,dc=C-NTDB
+
+# sip:\2B591792000200000@abcdefghi.example.com, hss, relation, 266012000200000,
+  SUBSCRIBER, DEFAULT, C-NTDB
+dn: publicId=sip:\+591792000200000@abcdefghi.example.com,ds=hss,subdata=relati
+ on,uid=266012000200000,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+publicId: sip:+591792000200000@abcdefghi.example.com
+objectClass: impuAlias
+aliasedObjectName: subscriptionId=1,ds=hss,subdata=services,uid=26601200020000
+ 0,ds=SUBSCRIBER,o=DEFAULT,dc=C-NTDB
+
+# tel:\2B591792000200000, hss, relation, 266012000200000, SUBSCRIBER, DEFAULT, 
+ C-NTDB
+dn: publicId=tel:\+591792000200000,ds=hss,subdata=relation,uid=266012000200000
+ ,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+publicId: tel:+591792000200000
+objectClass: impuAlias
+aliasedObjectName: subscriptionId=1,ds=hss,subdata=services,uid=26601200020000
+ 0,ds=SUBSCRIBER,o=DEFAULT,dc=C-NTDB
+
+# 266012000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+uid: 266012000200001
+objectClass: subscriber
+
+# services, 266012000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: subdata=services,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: services
+objectClass: subscriberSubdata
+
+# hlr, services, 266012000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: ds=hlr,subdata=services,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-N
+ TDB
+ds: hlr
+objectClass: cntdbDsElement
+
+# 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: imsi=266012000200001,ds=hlr,subdata=services,uid=266012000200001,ds=SUBSCR
+ IBER,o=DEFAULT,DC=C-NTDB
+imsi: 266012000200001
+objectClass: ACSUBDATA
+acSubscrType: 1
+acEncKey: 11111111111111111111111111111111
+acSeqNum: 000000000000
+acAMF: 0000
+acKdbId: 1
+acAlgorithmId: 1
+acIccId: 266012000200001
+
+# hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEFAULT, C-
+ NTDB
+dn: o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=266012000200001,ds=
+ SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+o: hlr
+objectClass: SUBINNSS
+basicService: TS21
+basicService: TS22
+basicService: GPRS
+multinumber: FALSE
+wllSubscr: FALSE
+msubType: 0
+tifSubscr: FALSE
+category: 10
+subscrRestr: 0
+odbBaoc: 0
+odbBaic: 0
+odbBaroam: 0
+odbBaprem: 0
+odbBassm: 0
+odbHplmn: 0
+odbPOAccess: 0
+odbSCI: 0
+netwAccMode: 3
+odbRoamGprs: 0
+optRouting: 2
+umtsSubScr: 7
+isActiveIMSI: FALSE
+ndcLac: 177
+msubStatus: 0
+actIMSIGprs: FALSE
+clipOverr: FALSE
+colpOverr: FALSE
+tifCsiActive: FALSE
+tifCsiNtfCse: FALSE
+gsmCcbsAct: 1
+ccbsBlckStat: 1
+ccbsSubStat: 3
+ccbsTQscnt: FALSE
+pwBlockedBN: FALSE
+validVLRLoc: FALSE
+mtcPossible: TRUE
+intVLRNumber: FALSE
+hplmnVLRNum: FALSE
+odbNotSupVLR: FALSE
+cugNotSupVLR: FALSE
+smsMtNotSup: FALSE
+msubPurged: FALSE
+mscArRestRcv: 2
+regSubNotSup: FALSE
+aoccNotSup: FALSE
+mapVersion: 3
+camelPhase: 1
+vlrNotAllow: FALSE
+ltFeatNotSup: FALSE
+gbs20NotSup: FALSE
+gbs30NotSup: FALSE
+gbs40NotSup: FALSE
+roamStatus: 0
+doubleMSUBSt: 0
+imsiTraceStat: 0
+imsiChgovrStat: 0
+ccbsAnotSVLR: FALSE
+ccbsBnotSVLR: FALSE
+defCFapplied: FALSE
+vbcVgcNotSup: FALSE
+prohFtnoUpdInVlrFail: FALSE
+ts10BarrByCb: 0
+ts20BarrByCb: 0
+ts60BarrByCb: 0
+bs20BarrByCb: 0
+bs30BarrByCb: 0
+bs40BarrByCb: 0
+vlrSupportsLongFtno: FALSE
+sgsnValidLoc: FALSE
+intSGSNNum: FALSE
+hplmnSGSNNum: FALSE
+sgsnNotAllow: FALSE
+sgsnSmsMtNot: FALSE
+prepaidBarr: FALSE
+gprsMapVers: 3
+gprsCamelPh: 1
+sgsnCamelNot: FALSE
+sgsnExtQos: FALSE
+sgsnRoamStat: 0
+odbNotSupSGSN: FALSE
+refroamAreaName: XTRAROAM
+msubPurgedGprs: FALSE
+hlrSubStat: TRUE
+vbsNotSupp: FALSE
+vgcsNotSupp: FALSE
+ageIndicatorForVLR: 000000
+ageIndicatorForSGSN: 000000
+oickSubst: 0
+supportedOick: FALSE
+suppExtCamelVlr: FALSE
+suppExtCamelSgsn: FALSE
+sgsnArRestRcv: 2
+regSubNotSupSGSN: FALSE
+autoCallRedirNotSup: FALSE
+ssetSubst: 0
+emoIckSubst: 0
+ssetNotSupp: FALSE
+emoIckNotSupp: FALSE
+sgsnIdentity: 1234567.sgsn-serv.example.com
+
+# 591792000200001, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCR
+ IBER, DEFAULT, C-NTDB
+dn: msisdn=591792000200001,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,
+ uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+msisdn: 591792000200001
+objectClass: MSISDNINNSS
+isMSISDNIntercepted: FALSE
+isBasic: TRUE
+
+# 2, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEFAULT,
+  C-NTDB
+dn: pdpContextId=2,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=2660
+ 12000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdpContextId: 2
+objectClass: GPRSDATA
+refqOfServName: adminHlr
+vplmnAllowed: TRUE
+pdpType: 1
+accPointName: xxxadmin
+chargCharac: 8
+chargCharacBehaviour: 0
+
+# 3, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEFAULT,
+  C-NTDB
+dn: pdpContextId=3,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=2660
+ 12000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdpContextId: 3
+objectClass: GPRSDATA
+refqOfServName: intrnHlr
+vplmnAllowed: TRUE
+pdpType: 1
+accPointName: xxxinternet
+chargCharac: 8
+chargCharacBehaviour: 0
+
+# 4, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEFAULT,
+  C-NTDB
+dn: pdpContextId=4,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=2660
+ 12000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdpContextId: 4
+objectClass: GPRSDATA
+refqOfServName: appHlr
+vplmnAllowed: TRUE
+pdpType: 1
+accPointName: xxxapp
+chargCharac: 8
+chargCharacBehaviour: 0
+
+# 5, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEFAULT,
+  C-NTDB
+dn: pdpContextId=5,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=2660
+ 12000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdpContextId: 5
+objectClass: GPRSDATA
+refqOfServName: adminHlr
+vplmnAllowed: TRUE
+pdpType: 1
+accPointName: enterprise
+chargCharac: 8
+chargCharacBehaviour: 0
+
+# non3GPP, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DE
+ FAULT, C-NTDB
+dn: subdata=non3GPP,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=266
+ 012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: non3GPP
+objectClass: NON3GPPDATA
+accessAPN: 0
+mip6Vector: 0000010000000000
+
+# eps, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEFAUL
+ T, C-NTDB
+dn: subdata=eps,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=2660120
+ 00200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: eps
+objectClass: EPSDATA
+msubPurgedEps: TRUE
+sessionTransNum: 266012000200001
+mmeIdentity: 1234567.mme-serv.example.com
+msisdn: 591792000200001
+
+# non3GPPEps, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER,
+  DEFAULT, C-NTDB
+dn: subdata=non3GPPEps,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=
+ 266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+subdata: non3GPPEps
+objectClass: NON3GPPEPSDATA
+defContextId: 2
+userMaxReqBwUL: 100000000
+userMaxReqBwDL: 100000000
+
+# xxxims, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEF
+ AULT, C-NTDB
+dn: pdnAccPointName=xxxims,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,
+ uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdnAccPointName: xxxims
+objectClass: PDNCONTEXT
+refLteQOfServName: imsQosEps
+vplmnAddressAllowed: NOTALLOWED
+pdnGwAllocType: DYNAMIC
+pdnChargCharac: 8
+pdnChargCharacBehaviour: 0
+pdnContextId: 1
+pdnType: IPv6
+pdnMaxReqBwUL: 128000
+pdnMaxReqBwDL: 128000
+
+# xxxadmin, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, D
+ EFAULT, C-NTDB
+dn: pdnAccPointName=xxxadmin,o=hlr,imsi=266012000200001,ds=hlr,subdata=service
+ s,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdnAccPointName: xxxadmin
+objectClass: PDNCONTEXT
+refLteQOfServName: adminQosEps
+vplmnAddressAllowed: NOTALLOWED
+pdnGwAllocType: DYNAMIC
+pdnChargCharac: 8
+pdnChargCharacBehaviour: 0
+pdnContextId: 2
+pdnType: IPv4v6
+pdnMaxReqBwUL: 75000000
+pdnMaxReqBwDL: 75000000
+
+# xxxinternet, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER
+ , DEFAULT, C-NTDB
+dn: pdnAccPointName=xxxinternet,o=hlr,imsi=266012000200001,ds=hlr,subdata=serv
+ ices,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdnAccPointName: xxxinternet
+objectClass: PDNCONTEXT
+refLteQOfServName: internetQosEps
+vplmnAddressAllowed: NOTALLOWED
+pdnGwAllocType: DYNAMIC
+pdnChargCharac: 8
+pdnChargCharacBehaviour: 0
+pdnContextId: 3
+pdnType: IPv4v6
+pdnMaxReqBwUL: 75000000
+pdnMaxReqBwDL: 75000000
+
+# cf, hlr, 266012000200001, hlr, services, 266012000200001, SUBSCRIBER, DEFAULT
+ , C-NTDB
+dn: pdnAccPointName=cf,o=hlr,imsi=266012000200001,ds=hlr,subdata=services,uid=
+ 266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+pdnAccPointName: cf
+objectClass: PDNCONTEXT
+refLteQOfServName: appQosEps
+vplmnAddressAllowed: NOTALLOWED
+pdnGwAllocType: DYNAMIC
+pdnChargCharac: 8
+pdnChargCharacBehaviour: 0
+pdnContextId: 7
+pdnType: IPv4v6
+pdnMaxReqBwUL: 75000000
+pdnMaxReqBwDL: 75000000
+
+# hss, services, 266012000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: ds=hss,subdata=services,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-N
+ TDB
+ds: hss
+objectClass: cntdbDsElement
+
+# 1, hss, services, 266012000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: subscriptionId=1,ds=hss,subdata=services,uid=266012000200001,ds=SUBSCRIBER
+ ,o=DEFAULT,DC=C-NTDB
+subscriptionId: 1
+objectClass: hssSubscription
+adminBlocked: FALSE
+defScscfReq: TRUE
+scscfHost: 12345678901234567890123.ccf1.example.com
+ccfPrim: ccfprimary.example.com
+ccfSec: ccfsecond.example.com
+profileType: N
+scscfDestRealm: example.com
+scscfSipAddress: sip:12345678901234567890123.ccf1.example.com
+maxNumOfPublicIds: 185
+chargingGroupId: asdfjklopq
+
+# 266012000200001@example.com, 1, hss, services, 266012000200001, SUBSCRIBER, D
+ EFAULT, C-NTDB
+dn: privateId=266012000200001@example.com,subscriptionId=1,ds=hss,subdata=serv
+ ices,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+privateId: 266012000200001@example.com
+objectClass: hssImpi
+actAsVLR: FALSE
+preferredDomain: N
+preferredAuthScheme: T
+usedAuthScheme: T
+framedInterfaceId: 2001:0000:0000:0000:0000:0000:0000:0000:0000:0000:0000:0000
+ :0000
+framedIPV6Prefix: 2001:0000:0000:0000:0000:0000:0000:0000:0000:0000:0000:0000:
+ 0000
+imsi: 266012000200001
+msisdn: 591792000200001
+httpDigestKeyVersion: 0
+provisionedIMSI: 266012000200001
+looseRoutingInd: 0
+
+# IRS01, 1, hss, services, 266012000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: irsId=IRS01,subscriptionId=1,ds=hss,subdata=services,uid=266012000200001,d
+ s=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+irsId: IRS01
+objectClass: hssIrs
+authenticationPending: FALSE
+registrationStatus: N
+privateIds: 266012000200001@example.com
+
+# 266012000200001@example.com, IRS01, 1, hss, services, 266012000200001, SUBSCR
+ IBER, DEFAULT, C-NTDB
+dn: privateId=266012000200001@example.com,irsId=IRS01,subscriptionId=1,ds=hss,
+ subdata=services,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+privateId: 266012000200001@example.com
+objectClass: hssRestorationData
+restorationData: Path: <sip:pcscf.core1.example.com:5070;lr;lskpmc=P01>\r\nCon
+ tact:+591792000200001<sip:+591792000200001@abcdefghi.example.com:5060>;expire
+ s=10800\r\nCall-ID: 1129888918192-411600000@core1.example.com\r\nFrom: +59179
+ 2000200001<sip:+591792000200001@abcdefghi.example.com>;tag=zpsfomm00000\r\nTo
+ : +591792000200001<sip:+591792000200001@abcdefghi.example.com>;tag=1062869746
+ \r\nRecord-Route: <sip:10.10.10.10:5070;routing_id=pcscf_a_side;lskpmc=P01;lr
+ >
+sipAuthScheme: IMS AKA
+
+# sip:\2B591792000200001@abcdefghi.example.com, IRS01, 1, hss, services, 266012
+ 000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: publicId=sip:\+591792000200001@abcdefghi.example.com,irsId=IRS01,subscript
+ ionId=1,ds=hss,subdata=services,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,D
+ C=C-NTDB
+publicId: sip:+591792000200001@abcdefghi.example.com
+objectClass: hssImpu
+indBarred: FALSE
+indDefault: TRUE
+origPublicId: sip:+591792000200001@abcdefghi.example.com
+serviceProfileName: SMS
+displayNamePrivacy: FALSE
+
+# CamiantUserData, sip:\2B591792000200001@abcdefghi.example.com, IRS01, 1, hss,
+  services, 266012000200001, SUBSCRIBER, DEFAULT, C-NTDB
+dn: serviceIndId=CamiantUserData,publicId=sip:\+591792000200001@abcdefghi.exam
+ ple.com,irsId=IRS01,subscriptionId=1,ds=hss,subdata=services,uid=266012000200
+ 001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+serviceIndId: CamiantUserData
+objectClass: hssRepositoryData
+repDataVers: 0
+data: H4sIAAAAAAAAAIWRUWuDMBSF3/srQt5nktpNJxrWyR4EWwpuY9CnNIYaMImYWN1+/RRXuo2V
+ 3ad7uOc7F+5dgCu1j1OmJNOuqF6saMGgam2jwcqkcq6JEOr73ut9z7RHtMSYoLdNXvBKKHYjtXVMc
+ wFGd6TNlilhG8bFPM4NZ04ancAfC7zBlpDGr6K145ASD8foLOLJkJXg+b0RCXwidysICm4msesOte
+ SQkvvlbRiGQRCM3Gz/hW3X2YVq5Yk5AalPyCrEXyDGD6cPqazHjboSkm2K/1MubNpZZxRYO9fKQ+f
+ EdIoEPsq6lvq4q5lOTTnyOfZjNHvp2Hw/C1389ZxPTfHWc7YBAAA=
+publicId: sip:\+591792000200001@abcdefghi.example.com
+
+# sip-application-server-abcdefg.example.com, sip:\2B591792000200001@abcdefghi.
+ example.com, IRS01, 1, hss, services, 266012000200001, SUBSCRIBER, DEFAULT, C-
+ NTDB
+dn: asHostName=sip-application-server-abcdefg.example.com,publicId=sip:\+59179
+ 2000200001@abcdefghi.example.com,irsId=IRS01,subscriptionId=1,ds=hss,subdata=
+ services,uid=266012000200001,ds=SUBSCRIBER,o=DEFAULT,DC=C-NTDB
+asHostName: sip-application-server-abcdefg.example.com
+objectClass: hssNotification
+notifyRegistration: FALSE
+notifyScscfName: FALSE
+notifyFilter: FALSE
+notifyPublicId: FALSE
+notifyChargingInfo: FALSE
+sessionId: sip-application-server-abcdefg.example.com;1439780408;239370
+serviceIndNames: CamiantUserData
+asDestRealm: example.com
+publicId: sip:+591792000200001@abcdefghi.example.com

@@ -1,0 +1,13 @@
+# extended LDIF
+#
+# LDAPv3
+# base <o=DEFAULT,DC=C-NTDB> with scope subtree
+# filter: (objectclass=*)
+# requesting: ALL
+#
+
+# DEFAULT, C-NTDB
+dn: o=DEFAULT,DC=C-NTDB
+o: DEFAULT
+objectClass: tenantConfiguration
+
